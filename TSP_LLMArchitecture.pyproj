@@ -1,0 +1,62 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>028c9527-8fa9-449d-92c1-1cebe7ec06a8</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>TSP_LLMArchitecture_Step1_CE_main.py</StartupFile>
+    <SearchPath>models;mydataclasses</SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>TSP_LLMArchitecture</Name>
+    <RootNamespace>TSP_LLMArchitecture</RootNamespace>
+    <InterpreterId>CondaEnv|CondaEnv|pytorch2x</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AutoRegressiveWrapper.py" />
+    <Compile Include="mydataclasses\Node.py" />
+    <Compile Include="mydataclasses\OptimizationResult.py" />
+    <Compile Include="models\MHSelfAttention.py" />
+    <Compile Include="models\PerceiverAR.py" />
+    <Compile Include="models\PositionalEncoding.py" />
+    <Compile Include="models\Rotary_Embedding_torch.py" />
+    <Compile Include="models\SimpleTransformer.py" />
+    <Compile Include="models\TransformerBlock.py" />
+    <Compile Include="MyTSPDataSet.py" />
+    <Compile Include="TSPLibDataSet.py" />
+    <Compile Include="TSP_LLMArchitecture_Step2_DPO__main.py" />
+    <Compile Include="TSP_LLMArchitecture_Step1_CE_main.py" />
+    <Compile Include="Utils.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="checkpoint\" />
+    <Folder Include="data\" />
+    <Folder Include="models\" />
+    <Folder Include="mydataclasses\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="CondaEnv|CondaEnv|pytorch2x" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="data\Bays29_Test_Opt9076.txt" />
+    <Content Include="data\TSPTestData_for_Rand29Nodes_1000.txt" />
+    <Content Include="data\TSPValidatinData_for_Nodes29_2.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
