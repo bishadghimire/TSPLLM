@@ -5,3 +5,35 @@ Abstract: Large Language Models (LLMs) have immensely advanced the field of Arti
 Keywords: Large Language Models; Transformer; Reinforcement Learning; Combinatorial Optimization; Travelling Salesman Problem
 
 PrePrint available @ https://www.preprints.org/manuscript/202502.1797/v1
+
+**Instructions**
+
+Run the "TSP_LLMArchitecture_Step1_CE_main.py" for the specified model size (embedding dimensions, number of layers, number of heads) and the training data files. These settings are specified at the top of "TSP_LLMArchitecture_Step1_CE_main.py". For example, to train the model for 29 nodes problem and test it on Bays29 TSPLIB benchmark, the settings are as follows:
+
+NUM_EPOCHS = int(25)
+BATCH_SIZE = 16
+GRADIENT_ACCUMULATE_EVERY = 1
+NUM_NODES = 29 
+LEARNING_RATE = 1e-4  
+VALIDATE_EVERY  = 1000
+GENERATE_EVERY  = 300  
+GENERATE_LENGTH = NUM_NODES 
+SEQ_LENGTH = NUM_NODES * 2 
+                           
+EMBEDDING_SIZE = 192 
+NUM_LAYERS = 12
+NUM_HEADS = 6
+LATENT_LEN = NUM_NODES 
+RESUME_TRAINING = False
+
+TrainDataset_File = "data/TSPTestData_for_Rand29Nodes_1000.txt" 
+TSPLibDataset_File = "data/Bays29_Test_Opt9076.txt" 
+ValidationDataset_File = "data/TSPValidatinData_for_Nodes29_2.txt" 
+SAVE_FILE_NAME = "TSPModel_" + str(NUM_LAYERS) + "_" + str(NUM_HEADS) + "_" + str(EMBEDDING_SIZE) + \
+            "_" + "Nodes" + str(NUM_NODES) + "_Bays29_STEP1.pt"
+
+To obtain training data for different size graphs, you can contact the authors.
+
+
+
+TSP_LLMArchitecture_Step2_DPO__main.py
