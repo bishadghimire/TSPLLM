@@ -10,9 +10,9 @@ PrePrint available @ https://www.preprints.org/manuscript/202502.1797/v1
 
 Run the "TSP_LLMArchitecture_Step1_CE_main.py" for the specified model size (embedding dimensions, number of layers, number of heads) and the training data files. These settings are specified at the top of "TSP_LLMArchitecture_Step1_CE_main.py". For example, to train the model for 29 nodes problem and test it on Bays29 TSPLIB benchmark, the settings are as follows:
 
-NUM_EPOCHS = int(25)
-BATCH_SIZE = 16
-GRADIENT_ACCUMULATE_EVERY = 1
+NUM_EPOCHS = int(25) __
+BATCH_SIZE = 16 __
+GRADIENT_ACCUMULATE_EVERY = 1 <br/>
 NUM_NODES = 29
 LEARNING_RATE = 1e-4
 VALIDATE_EVERY  = 1000
