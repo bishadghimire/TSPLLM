@@ -18,13 +18,13 @@ LEARNING_RATE = 1e-4 <br/>
 VALIDATE_EVERY  = 1000 <br/>
 GENERATE_EVERY  = 300 <br/>
 GENERATE_LENGTH = NUM_NODES <br/>
-SEQ_LENGTH = NUM_NODES * 2 <br/><br/>
+SEQ_LENGTH = NUM_NODES * 2 <br/>
                            
 EMBEDDING_SIZE = 192 <br/>
 NUM_LAYERS = 12 <br/>
 NUM_HEADS = 6 <br/>
 LATENT_LEN = NUM_NODES <br/>
-RESUME_TRAINING = False <br/><br/>
+RESUME_TRAINING = False <br/>
 
 TrainDataset_File = "data/TSPTestData_for_Rand29Nodes_1000.txt" <br/>
 TSPLibDataset_File = "data/Bays29_Test_Opt9076.txt"  <br/>
