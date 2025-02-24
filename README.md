@@ -67,3 +67,4 @@ The results may appear as:
 
 ![image](https://github.com/user-attachments/assets/ca281c79-52e4-4f37-b226-dd2e31b6ac01)
 
+Above graphs were generated after the models have been trained on 50,000 training data graphs. The optimization results improves as more training data is used to train the models.
